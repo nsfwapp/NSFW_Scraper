@@ -37,9 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install scrapy dnspython pymongo python-dotenv 
-      - name: shutdown apache
-        run: sudo service apache stop       
+          pip install scrapy python-dotenv dnspython pymongo      
       - name: Fetch latest data
         run: |-
           scrapy crawl vixen
