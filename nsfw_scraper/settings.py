@@ -2,7 +2,9 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+
 load_dotenv(dotenv_path=Path("../.env"))
+
 # Scrapy settings for nsfw_scraper project
 #
 # For simplicity, this file contains only settings considered important or
@@ -70,8 +72,8 @@ DOWNLOAD_DELAY = 0.25
 ITEM_PIPELINES = {
     'nsfw_scraper.pipelines.vixenPipeline': 300,
 }
-MONGO_URI = os.getenv(MONGO_URI)
-MONGO_DATABASE = os.getenv(MONGO_DATABASE)
+MONGO_URI = os.getenv("MONGO_URI")
+MONGO_DATABASE = os.getenv("MONGO_DATABASE")
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
