@@ -1,10 +1,10 @@
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 import os
 
 
-load_dotenv(dotenv_path=Path("../.env"))
-
+#load_dotenv(dotenv_path=Path("../.env"))
+load_dotenv(find_dotenv())
 # Scrapy settings for nsfw_scraper project
 #
 # For simplicity, this file contains only settings considered important or
@@ -74,6 +74,7 @@ ITEM_PIPELINES = {
 }
 MONGO_URI = os.getenv("MONGO_URI")
 MONGO_DATABASE = os.getenv("MONGO_DATABASE")
+#print(os.getenv("MONGO_DATABASE"))
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
