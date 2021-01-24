@@ -36,9 +36,8 @@ class vixenPipeline(object):
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
 
-    def close_spider(self, spider):
-        ## clean up when spider is closed
-        self.client.close()
+
+
 
     def process_item(self, item, spider):
         ## how to handle each post
@@ -48,3 +47,7 @@ class vixenPipeline(object):
         self.db[self.collection_name].update_one({'name':item['name']}, {'$set': dict(item)}, True)
         logging.debug("Vixen Scene added to MongoDB")
         return item
+
+    def close_spider(self, spider):
+        ## clean up when spider is closed
+        self.client.close()
