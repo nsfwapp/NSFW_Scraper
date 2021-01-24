@@ -36,7 +36,7 @@ jobs:
         run: |
           echo "import pymongo" >> test.py
           echo "client = pymongo.MongoClient('mongodb+srv://JDRanpariya:Jaygurukul@cluster0.lalaj.mongodb.net/nsfw-porn?retryWrites=true&w=majority')" >> test.py
-          echo "db = client['nsfw-porn'] >> test.py
+          echo "db = client['nsfw-porn']" >> test.py
           echo "db.name" >> test.py
       - name: check pymongo
         run: |
