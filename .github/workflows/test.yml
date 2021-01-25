@@ -1,6 +1,7 @@
+
 # This is a basic workflow to help you get started with Actions
 
-name: update Vixen Scenes
+name: test pymongo
 
 # Controls when the action will run. 
 on:
@@ -22,13 +23,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: create .env
-        run: |
-          touch .env
-          echo MONGO_URI=${{ secrets.MONGO_URI }} >> .env
-          echo MONGO_DATABASE=${{ secrets.MONGO_DATABASE }} >> .env
         
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -37,9 +31,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install scrapy python-dotenv dnspython
-          python -m pip install pymongo[aws,srv,tls] 
-          python -m pip install pymongo     
-      - name: Fetch latest data
-        run: |-
-          scrapy crawl vixen
+          pip install dnspython pymongo
+      - name: create pymongo
+        run: |
+          echo "import pymongo" >> test.py
+          echo "client = pymongo.MongoClient('mongodb+srv://JDRanpariya:Jaygurukul@cluster0.lalaj.mongodb.net/nsfw-porn?retryWrites=true&w=majority')" >> test.py
+          echo "db = client['nsfw-porn']" >> test.py
+          echo "db.name" >> test.py
+      - name: check pymongo
+        run: |
+          python test.py
+
