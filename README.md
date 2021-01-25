@@ -12,7 +12,7 @@ Scraper to get Meta-data of all available scenes and movies and storing it to sq
 
 ## Goals
 - First complete all todo's
-- add deeper, blacked and tushy
+- [X] add deeper, blacked and tushy
 
 ## For guys who use mongodb
 - use mongodb_pipeline branch [here](https://github.com/nsfwapp/NSFW_Scraper/tree/mongo-atlas_Pipeline)
