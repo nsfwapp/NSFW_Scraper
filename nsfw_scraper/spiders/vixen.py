@@ -1,7 +1,7 @@
 from scrapy import Spider
 import re
 import json
-from nsfw_scraper.items import vixenScene
+from ..items import vixenScene
 import scrapy
 from datetime import datetime
 import time
