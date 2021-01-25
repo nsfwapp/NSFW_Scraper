@@ -3,6 +3,7 @@ import re
 import json
 from nsfw_scraper.items import vixenScene
 import scrapy
+from datetime import datetime
 import time
 
 base_uri = "https://vixen.com"
@@ -20,7 +21,7 @@ class VixenSpider(Spider):
         for scene_url in scenes:
             #print(base_uri + scene_url)
             yield scrapy.Request(url=base_uri + scene_url, callback=self.parse_scene)
-        time.sleep(3)
+        time.sleep(0.5)
         last_page_url = response.xpath("//div[@class='sc-8bfwvf-0 jhtprW']//a[@class='sc-8bfwvf-2 cZoJWe active']/@href").get()
         page_num = re.findall("\d+", last_page_url)[0]
 
@@ -39,21 +40,21 @@ class VixenSpider(Spider):
         item = vixenScene()
 
         item['studio'] = 'Vixen'
-        item['sub_studio'] = 'None'
-        item['name'] = response.xpath("//*[@id='root']/main/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/h1/text()").get()
+        item['parent_studio'] = ''
+        item['title'] = response.xpath("//*[@id='root']/main/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/h1/text()").get()
 
         for i in jsondata['videos']:
             if response.xpath("//*[@id='root']/main/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/h1/text()").get() == i['title']:
                 item['thumbnail_url'] = i['images']['poster'][-1]['src']
-                item['thumbnail_hd_url'] = i['images']['poster'][-1]['highdpi']['3x']
+                #item['thumbnail_hd_url'] = i['images']['poster'][-1]['highdpi']['3x']
                 item['preview_url'] = i['previews']['poster'][-1]['src']        
 
         item['performers'] = response.xpath("//div[@data-test-component='VideoModels']/a/text()").getall()
         item['director'] = response.xpath("//span[@data-test-component='DirectorText']/text()").get()
-        item['length'] = response.xpath("//span[@data-test-component='RunLengthFormatted']/text()").get()
+        item['length'] = datetime.strptime(response.xpath("//span[@data-test-component='RunLengthFormatted']/text()").get(), '%M:%S').time()
         item['description'] = response.xpath("//div[@data-test-component='VideoDescription']/div/p/text()").get()
-        item['release_date'] = response.xpath("//span[@data-test-component='ReleaseDateFormatted']/text()").get()
-        item['rating_native'] = response.xpath("//span[@data-test-component='RatingNumber']/text()").get()
+        item['release_date'] = datetime.strptime(response.xpath("//span[@data-test-component='ReleaseDateFormatted']/text()").get(), '%B %d, %Y')
+        item['rating_native'] = float(response.xpath("//span[@data-test-component='RatingNumber']/text()").get())
 
         for i in jsondata['page']['data'][scene_path]['data']['pictureset']:
             gallary_tmp.append(i['main'][0]['src'])

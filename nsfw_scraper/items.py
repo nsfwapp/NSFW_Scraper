@@ -12,11 +12,11 @@ class NsfwScraperItem(Item):
     pass
 
 class vixenScene(Item):
+
     studio = Field()
-    sub_studio = Field()
-    name = Field()
+    parent_studio = Field()
+    title = Field()
     thumbnail_url = Field()
-    thumbnail_hd_url = Field()
     preview_url = Field()
     performers = Field()
     director = Field()

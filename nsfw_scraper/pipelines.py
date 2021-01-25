@@ -12,42 +12,40 @@
 #    def process_item(self, item, spider):
 #        return item
 import logging
-import pymongo
+from sqlalchemy.orm import sessionmaker
+from nsfw_scraper.models import Scene, db_connect, create_scenes_table
+
 
 class vixenPipeline(object):
-
-    collection_name = 'vixen'
-
-    def __init__(self, mongo_uri, mongo_db):
-        self.mongo_uri = mongo_uri
-        self.mongo_db = mongo_db
-
-    @classmethod
-    def from_crawler(cls, crawler):
-        ## pull in information from settings.py
-        return cls(
-            mongo_uri=crawler.settings.get('MONGO_URI'),
-            mongo_db=crawler.settings.get('MONGO_DATABASE')
-        )
-
-    def open_spider(self, spider):
-        ## initializing spider
-        ## opening db connection
-        self.client = pymongo.MongoClient(self.mongo_uri)
-        self.db = self.client[self.mongo_db]
-
-
-
+    """Vixen pipeline for storing scraped items in the database"""
+    def __init__(self):
+        """
+        Initializes database connection and sessionmaker.
+        Creates deals table.
+        """
+        engine = db_connect()
+        create_scenes_table(engine)
+        self.Session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):
-        ## how to handle each post
-        #if self.db[self.collection_name].find({'name':item['name']}).first() is not None:
-        #    pass
-        #else:
-        self.db[self.collection_name].update_one({'name':item['name']}, {'$set': dict(item)}, True)
-        logging.debug("Vixen Scene added to MongoDB")
-        return item
+        """Save deals in the database.
 
-    def close_spider(self, spider):
-        ## clean up when spider is closed
-        self.client.close()
+        This method is called for every item pipeline component.
+
+        """
+        session = self.Session()
+        scene = Scene(**item)
+
+        try:
+            #if session.query(Scenes).filter_by(title=item['title']).first():
+            #    pass
+            #else:
+            session.add(scene)
+            session.commit()
+        except:
+            session.rollback()
+            raise
+        finally:
+            session.close()
+
+        return item
