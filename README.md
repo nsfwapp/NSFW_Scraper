@@ -1,8 +1,8 @@
-# NSFW_Scraper
-Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
-
 **UPDATE** 
 Scraper is working very well and supports 7 sites as the moment check supported_sites.md
+
+# NSFW_Scraper
+Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
 - [ ] create github actions to run script daily
