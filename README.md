@@ -1,6 +1,9 @@
 # NSFW_Scraper
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
+**UPDATE** 
+Scraper is working very well and supports 7 sites as the moment check supported_sites.md
+
 ## TODO
 - [ ] create github actions to run script daily
 - [ ] add vixen movies from {find_website} or just link up with scene so it gets easy to link movie and it's respective scenes
