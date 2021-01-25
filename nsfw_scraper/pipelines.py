@@ -27,6 +27,7 @@ class vixenPipeline(object):
         create_scenes_table(engine)
         self.Session = sessionmaker(bind=engine)
 
+
     def process_item(self, item, spider):
         """Save deals in the database.
 
@@ -34,14 +35,28 @@ class vixenPipeline(object):
 
         """
         session = self.Session()
+
         scene = Scene(**item)
 
+        #scene.studio = item['studio']
+        #scene.parent_studio = item['parent_studio']
+        #scene.title = item['title']
+        #scene.thumbnail_url = item['thumbnail_url']
+        #scene.preview_url = item['preview_url']
+        #scene.performers = item['performers']
+        #scene.director = item['director']
+        #scene.length = item['length']
+        #scene.discription = item['discription']
+        #scene.release_date = item['release_date']
+        #scene.rating_native = item['rating_native']
+        #scene.gallary_urls = item['gallary_urls']
+
         try:
-            #if session.query(Scenes).filter_by(title=item['title']).first():
-            #    pass
-            #else:
-            session.add(scene)
-            session.commit()
+            if session.query(Scene).filter_by(title=item['title']).first():
+                pass
+            else:
+                session.add(scene)
+                session.commit()
         except:
             session.rollback()
             raise
