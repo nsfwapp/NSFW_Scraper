@@ -31,20 +31,20 @@ class vixenPipeline(object):
         session = self.Session()
         scene = Scene(**item)
         #scene = Scene(**item)
-        scene_exists = session.query(Scene).filter_by(title=item['title']).first() is not None
+        scene_exists = session.query(Scene).filter_by(title=item['title'],rating_native=item['rating_native']).first() is not None
 
         if scene_exists:
             logging.info(f'Item {scene} is in db')
             return item
-
-        try:
-            session.add(scene)
-            session.commit()
-            logging.info(f'Item {scene} stored in db')
-        except:
-            logging.info(f'Failed to add {scene} to db')
-            session.rollback()
-            raise
-        finally:
-            session.close()
+        else:
+            try:
+                session.add(scene)
+                session.commit()
+                logging.info(f'Item {scene} stored in db')
+            except:
+                logging.info(f'Failed to add {scene} to db')
+                session.rollback()
+                raise
+            finally:
+                session.close()
         return item
