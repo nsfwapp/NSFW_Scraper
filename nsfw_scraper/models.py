@@ -1,8 +1,10 @@
-from sqlalchemy import create_engine, MetaData, Column, Integer, String, DateTime, ARRAY, Time, Float, Table
+from sqlalchemy import create_engine, MetaData, Column, Text, Integer, String, DateTime, ARRAY, Time, Float, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
+import os
+from dotenv import load_dotenv, find_dotenv
 
-from nsfw_scraper import settings
+load_dotenv(find_dotenv())
 
 DeclarativeBase = declarative_base()
 
@@ -11,7 +13,7 @@ def db_connect():
     Performs database connection using database settings from settings.py.
     Returns sqlalchemy engine instance
     """
-    return create_engine(URL(**settings.DATABASE))
+    return create_engine(f'sqlite:///../{os.getenv("DATABASE")}')
 
 def create_scenes_table(engine):
     """"""
@@ -19,8 +21,7 @@ def create_scenes_table(engine):
     
 def Scene(DeclarativeBase):
     """ c """
-    __tablename__ = "scenes"
-
+    __tablename__ = 'scenes'
 
     id = Column(Integer, primary_key=True)
     studio = Column('studio', String(80))

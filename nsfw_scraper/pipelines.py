@@ -11,6 +11,7 @@
 #class NsfwScraperPipeline:
 #    def process_item(self, item, spider):
 #        return item
+#from scrapy import signals
 import logging
 from sqlalchemy.orm import sessionmaker
 from nsfw_scraper.models import Scene, db_connect, create_scenes_table
@@ -18,49 +19,32 @@ from nsfw_scraper.models import Scene, db_connect, create_scenes_table
 
 class vixenPipeline(object):
     """Vixen pipeline for storing scraped items in the database"""
+    
     def __init__(self):
-        """
-        Initializes database connection and sessionmaker.
-        Creates deals table.
-        """
         engine = db_connect()
         create_scenes_table(engine)
         self.Session = sessionmaker(bind=engine)
-
+        
 
     def process_item(self, item, spider):
-        """Save deals in the database.
 
-        This method is called for every item pipeline component.
-
-        """
         session = self.Session()
-
         scene = Scene(**item)
+        #scene = Scene(**item)
+        scene_exists = session.query(Scene).filter_by(title=item['title']).first() is not None
 
-        #scene.studio = item['studio']
-        #scene.parent_studio = item['parent_studio']
-        #scene.title = item['title']
-        #scene.thumbnail_url = item['thumbnail_url']
-        #scene.preview_url = item['preview_url']
-        #scene.performers = item['performers']
-        #scene.director = item['director']
-        #scene.length = item['length']
-        #scene.discription = item['discription']
-        #scene.release_date = item['release_date']
-        #scene.rating_native = item['rating_native']
-        #scene.gallary_urls = item['gallary_urls']
+        if scene_exists:
+            logging.info(f'Item {scene} is in db')
+            return item
 
         try:
-            if session.query(Scene).filter_by(title=item['title']).first():
-                pass
-            else:
-                session.add(scene)
-                session.commit()
+            session.add(scene)
+            session.commit()
+            logging.info(f'Item {scene} stored in db')
         except:
+            logging.info(f'Failed to add {scene} to db')
             session.rollback()
             raise
         finally:
             session.close()
-
         return item

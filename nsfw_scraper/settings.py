@@ -74,11 +74,8 @@ ITEM_PIPELINES = {
 }
 # postgres
 DATABASE = {
-    'drivername': 'postgres',
-    'host': os.getenv("HOST"),
-    'port': os.getenv("PORT"),
-    'username': os.getenv("USER"),
-    'password': os.getenv("PASS"),
+    'drivername': 'sqlite',
+    'host': '../',
     'database': os.getenv("DATABASE")
 }
 
