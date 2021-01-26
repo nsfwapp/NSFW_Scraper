@@ -47,12 +47,13 @@ class DeeperSpider(Spider):
             if response.xpath("//*[@id='root']/main/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/h1/text()").get() == i['title']:
                 item['thumbnail_url'] = i['images']['poster'][-1]['src']
                 #item['thumbnail_hd_url'] = i['images']['poster'][-1]['highdpi']['3x']
-                item['preview_url'] = i['previews']['poster'][-1]['src']        
+                item['preview_url'] = i['previews']['poster'][-1]['src']    
+                item['description'] = i['description']    
 
         item['performers'] = response.xpath("//div[@data-test-component='VideoModels']/a/text()").getall()
         item['director'] = response.xpath("//span[@data-test-component='DirectorText']/text()").get()
         item['length'] = datetime.strptime(response.xpath("//span[@data-test-component='RunLengthFormatted']/text()").get(), '%M:%S').time()
-        item['description'] = response.xpath("//div[@data-test-component='VideoDescription']/div/p/text()").get()
+        #item['description'] = response.xpath("//div[@data-test-component='VideoDescription']/div/p/text()").get()
         item['release_date'] = datetime.strptime(response.xpath("//span[@data-test-component='ReleaseDateFormatted']/text()").get(), '%B %d, %Y')
         item['rating_native'] = float(response.xpath("//span[@data-test-component='RatingNumber']/text()").get())
 
