@@ -27,7 +27,7 @@ NEWSPIDER_MODULE = 'nsfw_scraper.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 64
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -76,7 +76,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'nsfw_scraper.pipelines.vixenPipeline': 300,
+    'nsfw_scraper.pipelines.ScenePipeline': 300,
+    'nsfw_scraper.pipelines.PerformerPipeline': 400,
 }
 # postgres
 DATABASE = {

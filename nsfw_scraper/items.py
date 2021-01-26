@@ -22,3 +22,20 @@ class vixenScene(Item):
     rating_native = Field()
     gallary_urls = Field()
 
+class PerformerItem(Item):
+
+    name = Field()
+    description = Field()
+    profile_pic = Field()
+    date_of_birth = Field()
+    birth_place = Field()
+    height = Field()
+    measurments = Field()
+
+class Studio(Item):
+
+    name = Field()
+    description = Field()
+    logo_url = Field()
+
+

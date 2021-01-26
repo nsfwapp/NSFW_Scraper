@@ -21,8 +21,7 @@ class BrazzersSpider(Spider):
         for scene_url in scenes:
             #print(base_uri + scene_url)
             yield scrapy.Request(url=base_uri + scene_url, callback=self.parse_scene)
-        time.sleep(0.5)
-        last_page_url = response.xpath("//div[@class='sc-8bfwvf-0 jhtprW']//a[@class='sc-8bfwvf-2 cZoJWe active']/@href").get()
+        last_page_url = response.xpath("//li[@class='sowzbh-1 gjRQwQ'][9]/a/@href").get()
         page_num = re.findall("\d+", last_page_url)[0]
 
         for page_num in range(1, int(page_num)+1):
