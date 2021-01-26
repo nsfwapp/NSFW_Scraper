@@ -36,4 +36,18 @@ class Scene(DeclarativeBase):
     gallary_urls = Column("gallary_urls", ARRAY(String), nullable=True)
 
 
+class Performer(DeclarativeBase):
+    """ c """
+    __tablename__ = 'performers'
+
+    id = Column(Integer, primary_key=True)
+    name = Column('name', String)
+    description = Column('description', Text(), nullable=True)
+    profile_pic = Column('profile_pic', String)
+    date_of_birth = Column('date_of_birth', String, nullable=True)
+    birth_place = Column('birth_place', String, nullable=True)
+    height = Column('height', String)
+    measurments = Column('measurments', String, nullable=True)
+
+
 
