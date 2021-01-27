@@ -5,7 +5,7 @@ Scraper is working very well and supports 7 sites as the moment check supported_
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
-- [x] created 4+ tables with relations -> scenes, performers, movies, studios, genres
+- [x] created 6+ tables with relations -> scenes, performers, movies, studios, genres, tags
 - [ ] fix pipeline | scrapy item isn't getting stored with scene = Scene(**item) 
 - [ ] add movies from {find_website} or just link up with scene so it gets easy to link movie and it's respective scenes
 - [ ] Fix vixen.com spider ( problem with scraping 7 of 319 scences)
