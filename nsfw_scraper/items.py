@@ -22,7 +22,7 @@ class vixenScene(Item):
     rating_native = Field()
     gallary_urls = Field()
 
-class PerformerItem(Item):
+class performerItem(Item):
 
     name = Field()
     description = Field()
