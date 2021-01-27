@@ -5,6 +5,7 @@ Scraper is working very well and supports 7 sites as the moment check supported_
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
+- [ ] have 4 tables scenes, performers, movies, studios, genres
 - [ ] add movies from {find_website} or just link up with scene so it gets easy to link movie and it's respective scenes
 - [ ] Fix vixen.com spider ( problem with scraping 7 of 319 scences)
 
