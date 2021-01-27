@@ -1,7 +1,7 @@
 from scrapy import Spider
 import re
 import json, logging
-from ..items import PerformerItem
+from ..items import performerItem
 import scrapy
 from datetime import datetime
 import time

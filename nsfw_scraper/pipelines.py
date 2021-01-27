@@ -14,8 +14,8 @@
 #from scrapy import signals
 import logging
 from sqlalchemy.orm import sessionmaker
-from nsfw_scraper.models import Scene, Performer, db_connect, create_scenes_table
-from .items import vixenScene, PerformerItem
+from nsfw_scraper.models import Scene, Performer, db_connect, create_table
+from .items import vixenScene
 
 
 class ScenePipeline(object):
@@ -24,7 +24,7 @@ class ScenePipeline(object):
     
     def __init__(self):
         engine = db_connect()
-        create_scenes_table(engine)
+        create_table(engine)
         self.Session = sessionmaker(bind=engine)
         
 
@@ -58,7 +58,7 @@ class PerformerPipeline(object):
     
     def __init__(self):
         engine = db_connect()
-        create_scenes_table(engine)
+        create_table(engine)
         self.Session = sessionmaker(bind=engine)
         
 
