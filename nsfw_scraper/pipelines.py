@@ -14,7 +14,7 @@
 #from scrapy import signals
 import logging
 from sqlalchemy.orm import sessionmaker
-from nsfw_scraper.models import Scene, Performer, db_connect, create_table
+from nsfw_scraper.models import Scene, Rating, Tag, Studio, Movie, Genre, Director, ReleaseDate, Performer, db_connect, create_table
 from .items import vixenScene
 
 
@@ -65,8 +65,34 @@ class PerformerPipeline(object):
     def process_item(self, item, spider):
 
         session = self.Session()
+        performer = Performer(
+                    name = item['name'],
+                    aliases = item['aliases'],
+                    gender = item['gender'],
+                    description = item['description'],
+                    profile_pic = item['profile_pic'],
+                    date_of_birth = item['date_of_birth'], # get age from here
+                    years_active = item['years_active'],
+                    ethnicity = item['ethnicity'],
+                    birth_place = item['birth_place'],
+                    height = item['height'],
+                    hair_color = item['hair_color'],
+                    eye_color = item['eye_color'],
+                    boobs = item['boobs'],
+                    tattoos = item['tattoos'],
+                    piercings = item['piercings'],
+                    measurments = item['measurments'],
+                    
+        )
 
-        performer = Performer(**item)
+        rating = session.query(Rating).filter_by(rating=item['rating']).first()
+        rating_exists = rating is not None
+
+        if rating_exists:
+            performer.rating = rating
+        else:
+            performer.rating = Rating(rating=item['rating'])
+
         performer_exists = session.query(Performer).filter_by(name=item['name']).first() is not None
 
         if performer_exists:

@@ -32,7 +32,7 @@ class BrazzersPerformerSpider(Spider):
 
     def parse_scene(self, response):
 
-        item = PerformerItem()
+        item = performerItem()
 
         item['name'] = response.xpath("//div[@class='ebvhsz-1 dxRULB font-secondary']/text()").get()
         item['profile_pic'] = response.xpath("//img[@class='syf9gw-1 fZSTdE']/@src").get()      
