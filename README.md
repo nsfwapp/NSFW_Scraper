@@ -5,6 +5,7 @@ Scraper is working very well and supports 7 sites as the moment check supported_
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
+- [ ] find best source for performers, movies and studios
 - [ ] create data model for postgres
 - [ ] create data model for mongodb & update mongodb branch
 - [x] created 6+ tables with relations -> scenes, performers, movies, studios, genres, tags
