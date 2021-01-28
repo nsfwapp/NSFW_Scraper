@@ -15,6 +15,6 @@ tushy.com|TushySpider|:heavy_check_mark:|:x:|:x:|:x:|
 tushyraw.com|TushyRawSpider|:heavy_check_mark:|:x:|:x:|:x:|
 brazzers.com|BrazzersSpider|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
 thenude.com| |:x:|:x:|:x:|:construction:|
-babepedia.com| |:x:|:x:|:x:|:construction:|
+babepedia.com| |:x:|:x:|:x:|:heavy_check_mark:|
 adultdvdempire.com| |:x:|:x:|:construction:|:x:|
 
