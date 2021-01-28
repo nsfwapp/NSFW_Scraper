@@ -25,12 +25,22 @@ class vixenScene(Item):
 class performerItem(Item):
 
     name = Field()
+    aliases = Field()
+    gender = Field()
     description = Field()
     profile_pic = Field()
-    date_of_birth = Field()
+    date_of_birth = Field() # get age from here
+    years_active = Field()
+    ethnicity = Field()
     birth_place = Field()
     height = Field()
+    hair_color = Field()
+    eye_color = Field()
+    boobs = Field()
+    tattoos = Field()
+    piercings = Field()
     measurments = Field()
+    rating = Field()
 
 class Studio(Item):
 

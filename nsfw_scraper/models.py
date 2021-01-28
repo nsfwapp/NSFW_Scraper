@@ -1,4 +1,4 @@
-from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Float, Table
+from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Float, Table, Enum, UniqueConstraint
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import relationship
@@ -80,22 +80,22 @@ class Performer(DeclarativeBase):
 
     id = Column(Integer, primary_key=True)
     name = Column('name', String)
+    aliases = Column('aliases', Text(), nullable=True)
+    gender = Column('gender', Enum('Male', 'Female', 'Trans-M', 'Trans-F', 'Intersex', name='gender_type'))
     description = Column('description', Text(), nullable=True)
     profile_pic = Column('profile_pic', ARRAY(String))
-    status = Column('status', String)
+    date_of_birth = Column('date_of_birth', Date, nullable=True) # get age from here
+    years_active = Column('years_active', String)
     ethnicity = Column('ethnicity', String)
-    aliases = Column('aliases', Text(), nullable=True)
-    official_site = Column('official_site', String, nullable=True)
-    profession = Column('profession', String)
-    date_of_birth = Column('date_of_birth', String, nullable=True)
     birth_place = Column('birth_place', String, nullable=True)
     height = Column('height', String)
-    eye_color = Column('eye_color', String)
-    tattoos = Column('tattoos', String)
-    piercings = Column('piercings', String)
-    boobs = Column('boobs', String)
     hair_color = Column('hair_color', String)
+    eye_color = Column('eye_color', String)
+    boobs = Column('boobs', String)
+    tattoos = Column('tattoos', String, nullable=True)
+    piercings = Column('piercings', String, nullable=True)  
     measurments = Column('measurments', String, nullable=True)
+
 
     #repetative fields
     rating_id = Column(Integer, ForeignKey('ratings.id'))
@@ -134,7 +134,9 @@ class Rating(DeclarativeBase):
     __tablename__ = 'ratings'
 
     id = Column(Integer, primary_key=True)
-    rating = Column('rating', Float)
+    rating = Column('rating', Float(precision=1), unique=True)
+
+    
 
     performers =relationship("Performer", back_populates='rating')
 
