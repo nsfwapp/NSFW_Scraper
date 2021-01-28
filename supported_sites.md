@@ -18,4 +18,5 @@ thenude.com| |:x:|:x:|:x:|:construction:|
 freeones.com| |:x:|:x:|:x:|:construction:|
 babepedia.com| |:x:|:x:|:x:|:construction:|
 socialmediapornstars.com| |:x:|:x:|:x:|:construction:|
+adultdvdempire.com| |:x:|:x:|:construction:|:x:|
 
