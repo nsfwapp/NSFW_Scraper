@@ -14,4 +14,8 @@ deeper.com|DeeperSpider|:heavy_check_mark:|:x:|:x:|:x:|
 tushy.com|TushySpider|:heavy_check_mark:|:x:|:x:|:x:|
 tushyraw.com|TushyRawSpider|:heavy_check_mark:|:x:|:x:|:x:|
 brazzers.com|BrazzersSpider|:heavy_check_mark:|:x:|:x:|:heavy_check_mark:|
+thenude.com| |:x:|:x:|:x:|:construction:|
+freeones.com| |:x:|:x:|:x:|:construction:|
+babepedia.com| |:x:|:x:|:x:|:construction:|
+socialmediapornstars.com| |:x:|:x:|:x:|:construction:|
 
