@@ -9,7 +9,7 @@ Scraper to get Meta-data of all available scenes and movies and storing it to Po
 - [ ] sort out studios to include
 - [ ] create data model for postgres
 - [ ] create data model for mongodb & update mongodb branch
-- [ ] Fix vixen.com spider ( problem with scraping 7 of 319 scences)
+- [x] Fixed vixen.com spider ( problem with scraping 7 of 319 scences)
 
 ## Goals
 - First complete all todo's
