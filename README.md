@@ -9,9 +9,6 @@ Scraper to get Meta-data of all available scenes and movies and storing it to Po
 - [ ] sort out studios to include
 - [ ] create data model for postgres
 - [ ] create data model for mongodb & update mongodb branch
-- [x] created 6+ tables with relations -> scenes, performers, movies, studios, genres, tags
-- [x] fixed pipeline | scrapy item isn't getting stored with scene = Scene(**item) 
-- [ ] add movies from {find_website} or just link up with scene so it gets easy to link movie and it's respective scenes
 - [ ] Fix vixen.com spider ( problem with scraping 7 of 319 scences)
 
 ## Goals
