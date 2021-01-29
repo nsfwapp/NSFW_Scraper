@@ -5,11 +5,11 @@ Scraper is working very well and supports 7 sites as the moment check supported_
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
-- [x] added performers spider
+- [ ] add [this studios](https://github.com/nsfwapp/NSFW_Scraper/blob/main/Studios_to_work_on.md)
 - [ ] sort out studios to include
 - [ ] create data model for postgres
 - [ ] create data model for mongodb & update mongodb branch
-- [x] Fixed vixen.com spider ( problem with scraping 7 of 319 scences)
+
 
 ## Goals
 - First complete all todo's
