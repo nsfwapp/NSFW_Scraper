@@ -1,6 +1,6 @@
 # 0-9
 - Studios
-  - [ ] [#LetsDoeIt](https://letsdoeit.com/)
+  - [x] [#LetsDoeIt](https://letsdoeit.com/)
   - [ ] [1000 Facials](https://www.1000facials.com/en)
   - [ ] [18VR](https://18vr.com/)
   - [ ] [21 Sextury](https://www.21sextury.com/)
