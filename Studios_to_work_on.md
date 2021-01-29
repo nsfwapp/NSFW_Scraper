@@ -5,7 +5,7 @@
        - [ ] [Mamacitaz](mamacitaz.com) - :o:
        - [ ] [Ameture Euro](amateureuro.com) - :o:
        - [ ] [VIP Sex Vault](vipsexvault.com) - :o:
-  - [ ] [18VR](https://18vr.com/)
+  - [x] [18VR](https://18vr.com/)
   - [ ] [21 Sextury](https://www.21sextury.com/)
 - only movies ( no official site )
   - [ ] [100% stars](https://www.adultdvdempire.com/95644/studio/100-stars-porn-videos.html)
