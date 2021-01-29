@@ -1,6 +1,10 @@
 # 0-9
 - Studios
   - [x] [#LetsDoeIt](https://letsdoeit.com/)
+       - [ ] [DoeGirls](doegirls.com) - :question:
+       - [ ] [Mamacitaz](mamacitaz.com) - :o:
+       - [ ] [Ameture Euro](amateureuro.com) - :o:
+       - [ ] [VIP Sex Vault](vipsexvault.com) - :o:
   - [ ] [1000 Facials](https://www.1000facials.com/en)
   - [ ] [18VR](https://18vr.com/)
   - [ ] [21 Sextury](https://www.21sextury.com/)
