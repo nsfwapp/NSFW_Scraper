@@ -20,3 +20,6 @@ Scraper to get Meta-data of all available scenes and movies and storing it to Po
 
 ## For guys who use mongodb
 - use mongodb_pipeline branch [here](https://github.com/nsfwapp/NSFW_Scraper/tree/mongo-atlas_Pipeline)
+
+Join Discord:
+[NSFW_DEV](https://discord.gg/7GgzeRAZ7P)
