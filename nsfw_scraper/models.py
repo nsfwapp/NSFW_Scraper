@@ -1,4 +1,4 @@
-from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Float, Table, Enum, UniqueConstraint
+from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Float, Table, Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import relationship
@@ -15,7 +15,7 @@ def db_connect():
     """
     return create_engine(URL(**settings.DATABASE))
 
-def create_table(engine):
+def create_table(engine, echo=True):
     """"""
     DeclarativeBase.metadata.create_all(engine)
 
@@ -43,6 +43,7 @@ movie_genres_table = Table('movie_genres_table', Base.metadata,
                     Column("movie_id", Integer, ForeignKey('movies.id')),
                     Column("genre_id", Integer, ForeignKey('genres.id'))
                     )    
+
 class Scene(DeclarativeBase):  # Scene is entity type and calling-out is entity, title is attribute type
     """ c """
     __tablename__ = 'scenes'
@@ -110,7 +111,7 @@ class Director(DeclarativeBase):
     __tablename__ = 'directors'
 
     id = Column(Integer, primary_key=True)
-    name = Column('name', String)
+    name = Column('name', String, unique=True)
 
     scenes = relationship("Scene", back_populates='director')
 
@@ -122,7 +123,7 @@ class ReleaseDate(DeclarativeBase):
     __tablename__ = 'releasedates'
 
     id = Column(Integer, primary_key=True)
-    release_date = Column('relesse_date', Date)
+    release_date = Column('relesse_date', Date, unique=True)
 
     scenes = relationship("Scene", back_populates='release_date')
 
@@ -135,8 +136,6 @@ class Rating(DeclarativeBase):
 
     id = Column(Integer, primary_key=True)
     rating = Column('rating', Float(precision=1), unique=True)
-
-    
 
     performers =relationship("Performer", back_populates='rating')
 
@@ -155,6 +154,7 @@ class Movie(DeclarativeBase):
     length = Column('length', Time)
     movie_trailer = Column('movie_trailer', String, nullable=True)
     description = Column('description', Text(), nullable=True)
+    gallary_urls = Column("gallary_urls", ARRAY(String), nullable=True)
     #repetitive fields
     studio_id = Column(Integer, ForeignKey('studios.id'))
     studio = relationship("Studio", back_populates='movies')
@@ -184,10 +184,10 @@ class Studio(DeclarativeBase):
     __tablename__ = 'studios'
 
     id = Column(Integer, primary_key=True)
-    studio = Column('studio', String)
-    parent_studio = Column('parent_studio', String)
-    url = Column('url', String)
-    despcription = Column('description', Text())
+    studio = Column('studio', String, unique=True)
+    parent_studio = Column('parent_studio', String, nullable=True)
+    url = Column('url', String, nullable=True)
+    despcription = Column('description', Text(), nullable=True)
     #repetative fields
 
     movies = relationship("Movie", back_populates="studio")
@@ -211,7 +211,7 @@ class Tag(DeclarativeBase):
     __tablename__ = 'tags'
 
     id = Column(Integer, primary_key=True)
-    tag = Column('tag', String)
+    tag = Column('tag', String, unique=True)
 
     scenes = relationship("Scene", secondary=scene_tags_table, back_populates='tags') # back_populates ref to tag defiend in scenes table and vice versa 
 

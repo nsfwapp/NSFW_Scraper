@@ -1,7 +1,7 @@
 from scrapy import Spider
 import re
 import json
-from ..items import vixenScene
+from ..items import sceneItem
 import scrapy
 from datetime import datetime
 import time
@@ -31,13 +31,13 @@ class VixenSpider(Spider):
 
     def parse_scene(self, response):
 
-        res = response.text.encode().decode('unicode_escape')
-        data = re.search(r'window\.__INITIAL_STATE__ = ({.*});', res).group(1)
+        #res = response.text.encode().decode('unicode_escape')
+        data = re.search(r"window\.__INITIAL_STATE__ = ({.*});", response.text).group(1)
         jsondata = json.loads(data)
         scene_path = jsondata['location']['pathname']
         gallary_tmp = []        
 
-        item = vixenScene()
+        item = sceneItem()
 
         item['studio'] = 'Vixen'
         item['parent_studio'] = ''

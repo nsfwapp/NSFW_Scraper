@@ -78,6 +78,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     'nsfw_scraper.pipelines.ScenePipeline': 300,
     'nsfw_scraper.pipelines.PerformerPipeline': 400,
+    'nsfw_scraper.pipelines.MoviePipeline': 400,
 }
 # postgres
 DATABASE = {
@@ -112,3 +113,9 @@ DATABASE = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+from shutil import which
+
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
+SELENIUM_DRIVER_ARGUMENTS=['--headless']  # '--headless' if using chrome instead of firefox
