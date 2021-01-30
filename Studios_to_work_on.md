@@ -1,7 +1,10 @@
+#### :heavy_dollar_sign: -> UI Inspiration
+#### :o: -> On Waitlist
+
 # 0-9
 - Studios
   - [x] [#LetsDoeIt](https://letsdoeit.com/)
-       - [ ] [DoeGirls](doegirls.com) - :question:
+       - [ ] [DoeGirls](doegirls.com) - :o:
        - [ ] [Mamacitaz](mamacitaz.com) - :o:
        - [ ] [Ameture Euro](amateureuro.com) - :o:
        - [ ] [VIP Sex Vault](vipsexvault.com) - :o:
