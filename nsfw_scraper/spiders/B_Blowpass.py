@@ -8,7 +8,7 @@ import time
 
 base_uri = "https://www.blowpass.com/en"
 
-class BlackedSpider(Spider):
+class BlowpassSpider(Spider):
     name = "blowpass"
     allowed_domains = ["blowpass.com"]
     start_urls = [
@@ -48,7 +48,7 @@ class BlackedSpider(Spider):
             item['studio'] = response.xpath("//span[@class='siteNameSpan']/text()").get()
             item['performers'] = response.xpath("//span[@class='slide-title']/text()").getall()
             item['director'] = ''
-            item['release_date'] = datetime.strptime(response.xpath("//p[@class='updatedDate']/text()").getall()[1].strip(), "%m-%d-%Y")
+            item['release_date'] = datetime.strptime(response.xpath("//p[@class='updatedDate']/text()").getall()[1].strip(), "%m-%d-%Y").date()
             item['rating'] = ''
             item['movie'] = ''
             item['tags'] = response.xpath("//div[@class='sceneCategories']/a/text()").getall()

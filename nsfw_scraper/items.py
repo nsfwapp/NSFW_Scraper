@@ -7,20 +7,21 @@ from scrapy.item import Item, Field
 
 
 
-class vixenScene(Item):
+class sceneItem(Item):
 
-    studio = Field()
-    parent_studio = Field()
     title = Field()
     thumbnail_url = Field()
     preview_url = Field()
-    performers = Field()
-    director = Field()
     length = Field()
     description = Field()
-    release_date = Field()
-    rating_native = Field()
     gallary_urls = Field()
+    studio = Field()
+    performers = Field() 
+    director = Field()
+    release_date = Field()
+    rating = Field()
+    movie = Field()
+    tags = Field()
 
 class performerItem(Item):
 
@@ -42,10 +43,22 @@ class performerItem(Item):
     measurments = Field()
     rating = Field()
 
-class Studio(Item):
 
-    name = Field()
+class movieItem(Item):
+
+    movie_title = Field()
+    movie_cover = Field()
+    movie_trailer = Field()
+    length = Field()
     description = Field()
-    logo_url = Field()
+    gallary_urls = Field()
+    studio = Field()
+    performers = Field() 
+    director = Field()
+    release_date = Field()
+    rating = Field()
+    scenes = Field()
+    genres = Field()
+    tags = Field()
 
 

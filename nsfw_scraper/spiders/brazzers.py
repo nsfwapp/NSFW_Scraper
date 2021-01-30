@@ -1,7 +1,7 @@
 from scrapy import Spider
 import re
 import json
-from ..items import vixenScene
+from ..items import sceneItem
 import scrapy
 from datetime import datetime
 import time
@@ -34,7 +34,7 @@ class BrazzersSpider(Spider):
         jsondata = json.loads(data)
         gallary_tmp = []        
 
-        item = vixenScene()
+        item = sceneItem()
 
         item['studio'] = response.xpath("//div[@class='vdkjux-3 fRnfXb']/a/text()").get()
         item['parent_studio'] = 'Brazzers'

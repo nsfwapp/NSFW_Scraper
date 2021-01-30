@@ -15,7 +15,7 @@
 import logging
 from sqlalchemy.orm import sessionmaker
 from nsfw_scraper.models import Scene, Rating, Tag, Studio, Movie, Genre, Director, ReleaseDate, Performer, db_connect, create_table
-from .items import vixenScene
+from .items import sceneItem, performerItem, movieItem
 
 
 class ScenePipeline(object):
@@ -32,7 +32,20 @@ class ScenePipeline(object):
 
         session = self.Session()
 
-        scene = Scene(**item)
+        scene = Scene(
+                    title = item['title'],
+                    thumbnail_url = item['thumbnail_url'],
+                    preview_url = item['preview_url'],
+                    length = item['length'],
+                    description = item['description'],
+                    gallary_urls = item['gallary_urls'], 
+                    studio = item['studio'],        #FK
+                    performers = item['performers'],    #FK
+                    director = item['director'],    #FK
+                    release_date = item['release_date'],    #FK
+                    movie = item['movie'],  #FK
+                    tags = item['tags']     #FK
+        )
         #scene = Scene(**item)
         scene_exists = session.query(Scene).filter_by(title=item['title'],rating_native=item['rating_native']).first() is not None
 
@@ -52,7 +65,54 @@ class ScenePipeline(object):
                 session.close()
         return item
 
+class MoviePipeline(object):
+
+    """Movie pipeline for storing scraped items in the database"""
     
+    def __init__(self):
+        engine = db_connect()
+        create_table(engine)
+        self.Session = sessionmaker(bind=engine)
+        
+
+    def process_item(self, item, spider):
+
+        session = self.Session()
+
+        movie = Movie(
+                    movie_title = item['movie_title'],
+                    movie_cover = item['movie_cover'],
+                    movie_trailer = item['movie_trailer'],
+                    length = item['length'],
+                    description = item['description'],
+                    gallary_urls = item['gallary_urls'], 
+                    studio = item['studio'],        #FK
+                    performers = item['performers'],    #FK
+                    director = item['director'],    #FK
+                    release_date = item['release_date'],    #FK
+                    scenes = item['scenes'],#FK
+                    genres = item['genres'],  #FK
+                    tags = item['tags']     #FK
+        )
+        #scene = Scene(**item)
+        scene_exists = session.query(Scene).filter_by(title=item['title'],rating_native=item['rating_native']).first() is not None
+
+        if scene_exists:
+            logging.info(f'Item {scene} is in db')
+            return item
+        else:
+            try:
+                session.add(scene)
+                session.commit()
+                logging.info(f'Item {scene} stored in db')
+            except:
+                logging.info(f'Failed to add {scene} to db')
+                session.rollback()
+                raise
+            finally:
+                session.close()
+        return item
+
 class PerformerPipeline(object):
     """Performer pipeline for storing scraped items in the database"""
     
@@ -84,7 +144,8 @@ class PerformerPipeline(object):
                     measurments = item['measurments'],
                     
         )
-
+        logging.info(item['rating'])
+        logging.info(type(item['rating']))
         rating = session.query(Rating).filter_by(rating=item['rating']).first()
         rating_exists = rating is not None
 
