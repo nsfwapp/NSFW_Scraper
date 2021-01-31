@@ -57,56 +57,9 @@
   
 # C
 - Studios
-  - [ ] []()
+  - [ ] [Club Sweethearts](https://clubseventeen.com/#)
 - Only Movies
-  - [ ] []()
-  
-  
-# D
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-  
-  
-# E
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-  
-  
-# F
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-  
-  
-# G
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-  
-  
-# H
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-    
-  
-# I
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-      
-  
-# J
-- Studios
-  - [ ] []()
-- Only Movies
-  - [ ] []()
-        
+  - [ ] [Critical Mass Video](https://www.adultdvdempire.com/93328/studio/critical-mass-video-porn-videos.html)
+  - [ ] [Cinema Erotika](https://www.adultdvdempire.com/93890/studio/cinema-erotika-porn-videos.html)
+
+# Porn Networks
