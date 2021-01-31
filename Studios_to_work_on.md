@@ -29,7 +29,6 @@
   - [ ] [Adult Source Media](https://www.adultdvdempire.com/31352/studio/adult-source-media-porn-videos.html)
   - [ ] [Adult Time Orignals](https://www.adultdvdempire.com/95569/studio/adult-time-porn-videos.html)
   - [ ] [Alex Romero](https://www.adultdvdempire.com/93851/studio/alex-romero-porn-videos.html?sort=year&media=14)
-  - [ ] [AP Production](https://www.adultdvdempire.com/36194/studio/anastasia-pierce-productions-porn-videos.html?sort=year&media=14)
   
 # B
 - Studios
