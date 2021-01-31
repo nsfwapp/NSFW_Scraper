@@ -32,12 +32,6 @@
   
 # B
 - Studios
-  - [x] [BlowPass](www.blowpass.com/en)
-      - [x] [1000 Facials](https://www.1000facials.com/en)
-      - [x] [Throted](https://www.throted.com/en)
-      - [x] [Mommy Blows Best](https://www.mommyblowsbest.com/en)
-      - [x] [Only Teen Blowjobs](https://www.onlyteenblowjobs.com/en)
-      - [x] [Immoral](https://www.immorallive.com/en)
   - [ ] [Blacked](https://blacked.com/)
       - [ ] [BlackedRaw](https://blackedraw.com/)
   - [ ] [Blue Movie Exclusiv](https://www.adultdvdempire.com/95797/studio/blue-movie-exklusiv-porn-videos.html?sort=year&media=14)
@@ -63,3 +57,24 @@
   - [ ] [Cinema Erotika](https://www.adultdvdempire.com/93890/studio/cinema-erotika-porn-videos.html)
 
 # Porn Networks
+
+
+- [ ] [AD4X](https://ad4x.com/tour/en/videos)
+- [ ] [Adult Time](https://adulttime.com)
+- [ ] [Analized.com](https://analized.com)
+- [ ] [Ameture Euro](https://amateureuro.com)
+
+#
+- [ ] [Babes Network](https://www.babesnetwork.com/scenes)
+- [x] [BlowPass](www.blowpass.com/en)
+    - [x] [1000 Facials](https://www.1000facials.com/en)
+    - [x] [Throted](https://www.throted.com/en)
+    - [x] [Mommy Blows Best](https://www.mommyblowsbest.com/en)
+    - [x] [Only Teen Blowjobs](https://www.onlyteenblowjobs.com/en)
+    - [x] [Immoral](https://www.immorallive.com/en)
+- [ ] [Brazzers.com](https://www.brazzers.com/)
+- [ ] [Burning Angle](https://www.burningangel.com/en) :heavy_dollar_sign:
+- [ ] [BANG!](https://www.bang.com/videos)
+- [ ] [Bellesa](https://www.bellesa.co/videos)
+    - [ ] [Bellesa Films](https://www.bellesafilms.com/scenes)
+- [ ] [BangBros](https://bangbros.com/)
