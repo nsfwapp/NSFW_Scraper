@@ -78,3 +78,87 @@
 - [ ] [Bellesa](https://www.bellesa.co/videos)
     - [ ] [Bellesa Films](https://www.bellesafilms.com/scenes)
 - [ ] [BangBros](https://bangbros.com/)
+
+#
+- [ ] [Cherry Pimps](https://cherrypimps.com/) :heavy_dollar_sign:
+- [ ] [Czech AV](https://czechav.com/) :heavy_dollar_sign:
+
+#
+- [ ] [Dorcel Club](https://www.dorcelclub.com/en/news-videos-x-marc-dorcel)
+- [ ] [Devil's Film](https://www.devilsfilm.com/en/scenes/)
+- [ ] [Dogfart Network](https://www.dogfartnetwork.com/tour/scenes/)
+- [ ] [Digital Playground](https://www.digitalplayground.com/scenes)
+
+#
+- [ ] [Evil Angel](https://www.evilangel.com/en/videos)
+- [ ] [Elegenxia](http://www.eleganxia.com/sites.html)
+
+#
+- [ ] [Fantasy Massage](https://www.fantasymassage.com/en/videos)
+- [ ] [Fake Hub](https://www.fakehub.com/scenes)
+- [ ] [Fucking Awesome](https://www.adultdvdempire.com/95350/studio/fucking-awesome-porn-movies.html) or [this](https://fuckingawesome.com/most-recent/)
+
+#
+- [ ] [Hustler](https://www.hustler.com/movies)
+
+#
+- [ ] [Is this Real?](https://www.isthisreal.com/en/videos)
+
+#
+- [ ] [Jules Jordan](https://www.julesjordan.com/trial/categories/movies.html)
+
+#
+- [ ] [Kink](https://www.kink.com/shoots/latest)
+- [ ] [Karups](https://www.adultdvdempire.com/95458/studio/karups-porn-videos.html?media=14)
+
+#
+- [ ] [LetsDoeIt](https://letsdoeit.com/)
+
+#
+- [ ] [Mofos](https://www.mofos.com/scenes)
+- [ ] [MetArt](https://www.metart.com/movies)
+- [ ] [Milfed](https://www.milfed.com/scenes)
+- [ ] [MYLF](https://www.mylf.com/movies) :heavy_dollar_sign:
+- [ ] [Mile High Media](https://www.milehighmedia.com/scenes)
+
+#
+- [ ] [Nympho](https://tour.nympho.com/videos)
+- [ ] [Naughty America](https://www.naughtyamerica.com/new-porn-videos)
+- [ ] [Nubiles](https://nubiles-porn.com/video/gallery)
+- [ ] [Nubile Films](https://nubilefilms.com/video/gallery)
+- [ ] [New Sensations](https://www.newsensations.com/tour_ns/categories/movies_1_d.html)
+
+# 
+- [ ] [Porn World | DDF](https://pornworld.com/)
+- [ ] [Passion HD](https://passion-hd.com/?page=1)
+- [ ] [Perfect Gonzo](https://www.perfectgonzo.com/)
+- [ ] [PornPros](https://pornpros.com/?page=1)
+- [ ] [Private](https://www.private.com/scenes/)
+- [ ] [Penthoust Gold](https://penthousegold.com/videos/videos.html)
+- [ ] [Pure Taboo](https://www.puretaboo.com/en/videos)
+- [ ] [Porn Fidelity](https://www.pornfidelity.com/)
+- [ ] [Property Sex](https://www.propertysex.com/scenes)
+
+#
+- [ ] [Reality Kings](https://www.realitykings.com/scenes)
+
+#
+- [ ] [Spizoo](https://www.spizoo.com/categories/Movies.html)
+- [ ] [Sexy Hub](https://www.sexyhub.com/scenes)
+
+#
+- [ ] [Teen Mega World](https://teenmegaworld.net/categories/movies.html)
+- [ ] [Twisty Network](https://www.twistysnetwork.com/)
+- [ ] [Teem Skeet](https://www.teamskeet.com/movies?filter=recent&page=1)
+- [ ] [Tonight's Girlfriend](https://www.tonightsgirlfriend.com/scenes)
+- [ ] [Teen Fidelity](https://www.teenfidelity.com/)
+
+#
+- [ ] [Vixen Network](https://vixengroup.com/brands)
+
+#
+- [ ] [X Art](https://www.x-art.com/videos/)
+- [ ] [XEmpire](https://www.xempire.com/en/videos)
+
+#
+- [ ] [Wicked Pictures](https://www.wicked.com/en/videos)
