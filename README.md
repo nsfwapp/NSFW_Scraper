@@ -1,12 +1,9 @@
-**UPDATE** 
-Scraper is working very well and supports 7 sites as the moment check supported_sites.md
 
 # NSFW_Scraper
 Scraper to get Meta-data of all available scenes and movies and storing it to Postgresql every few days.
 
 ## TODO
 - [ ] add [this studios](https://github.com/nsfwapp/NSFW_Scraper/blob/main/Studios_to_work_on.md)
-- [x] create data model for postgres
 - [ ] create data model for mongodb & update mongodb branch
 
 
