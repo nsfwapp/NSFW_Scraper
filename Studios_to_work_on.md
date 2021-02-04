@@ -1,6 +1,4 @@
 #### :heavy_dollar_sign: -> UI Inspiration
-#### :o: -> On Waitlist
--.-> [first include this ones](https://theporndude.com/top-premium-sites)
 
 
 # Porn Networks
