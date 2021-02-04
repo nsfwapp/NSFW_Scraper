@@ -11,6 +11,7 @@ base_uri = "https://letsdoeit.com/"
 class NameSpider(Spider):
     name = "name"
     allowed_domains = ["letsdoeit.com"]
+    custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.ScenePipeline': 400}}
     start_urls = [
         "https://letsdoeit.com/videos.en.html"
     ]

@@ -11,6 +11,7 @@ base_uri = "https://letsdoeit.com/"
 class LetsdoeitSpider(Spider):
     name = "letsdoeit"
     allowed_domains = ["letsdoeit.com"]
+    custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.ScenePipeline': 400}}
     start_urls = [
         "https://letsdoeit.com/videos.en.html"
     ]
@@ -20,7 +21,7 @@ class LetsdoeitSpider(Spider):
         
         for scene_url in scenes:
             #print(base_uri + scene_url)
-            yield scrapy.Request(url=base_uri + scene_url, callback=self.parse_scene)
+            yield scrapy.Request(url=scene_url, callback=self.parse_scene)
         #time.sleep(0.5)
         last_page_url = response.xpath("//div[@data-item='c-51 r-11 t-c-31 / middle right']/a/@href").get()
         page_num = re.findall("\d+", last_page_url)[0]
@@ -32,7 +33,7 @@ class LetsdoeitSpider(Spider):
     def parse_scene(self, response):
 
             item = sceneItem()
-
+            item['parent_studio'] = '#LetsDoeIt'
             item['title'] = response.xpath("//h1/text()").get()
             item['thumbnail_url'] = response.xpath("//div[@itemprop='video']/meta[@itemprop='thumbnailUrl']/@content").get()
             item['preview_url'] = response.xpath("//div[@itemprop='video']/meta[@itemprop='contentURL']/@content").get()
@@ -43,8 +44,8 @@ class LetsdoeitSpider(Spider):
             item['performers'] = response.xpath("//div[@class='actors']/h2/span/a/strong/text()").getall()
             item['director'] = ''
             item['release_date'] = datetime.strptime(response.xpath("//div[@itemprop='video']/meta[@itemprop='uploadDate']/@content").get().split('T')[0], "%Y-%m-%d").date()
-            item['rating'] = ''
-            item['movie'] = ''
+            item['rating'] = None
+            item['movie'] = None
             item['tags'] = response.xpath("//div[@class='h5 no-space color-rgba255-06']/a/text()").getall()
 
 

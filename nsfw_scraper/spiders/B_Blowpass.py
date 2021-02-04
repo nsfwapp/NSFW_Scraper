@@ -11,6 +11,7 @@ base_uri = "https://www.blowpass.com/en"
 class BlowpassSpider(Spider):
     name = "blowpass"
     allowed_domains = ["blowpass.com"]
+    custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.ScenePipeline': 400}}
     start_urls = [
         "https://www.blowpass.com/en/videos"
     ]
@@ -34,6 +35,7 @@ class BlowpassSpider(Spider):
             prev_base_uri = 'https://trailers-openlife.gammacdn.com/'
 
             item = sceneItem()
+            item['parent_studio'] = 'Blowpass Network'
 
             item['title'] = response.xpath("//meta[@property='og:title']/@content").get()
             item['thumbnail_url'] = response.xpath("//meta[@property='og:image']/@content").get()

@@ -1,7 +1,7 @@
-from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Float, Table, Enum
+from sqlalchemy import ForeignKey, create_engine, MetaData, Column, Text,Date, Integer, String, DateTime, ARRAY, Time, Numeric, Table, Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.engine.url import URL
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 from nsfw_scraper import settings
 
@@ -15,7 +15,7 @@ def db_connect():
     """
     return create_engine(URL(**settings.DATABASE))
 
-def create_table(engine, echo=True):
+def create_table(engine):
     """"""
     DeclarativeBase.metadata.create_all(engine)
 
@@ -56,24 +56,20 @@ class Scene(DeclarativeBase):  # Scene is entity type and calling-out is entity,
     description = Column('description', Text(), nullable=True)
     gallary_urls = Column("gallary_urls", ARRAY(String), nullable=True)
     #repetative fields
+    
     studio_id = Column(Integer, ForeignKey('studios.id'))
-    studio = relationship("Studio", back_populates='scenes')
 
-    performers = relationship("Performer",secondary=scene_cast_table, back_populates='scenes')
+    performers = relationship("Performer",secondary=scene_cast_table, backref='scenes', cascade_backrefs=False)
     
     director_id = Column(Integer, ForeignKey('directors.id'))
-    director = relationship("Director", back_populates='scenes')
 
     release_date_id = Column(Integer, ForeignKey('releasedates.id'))
-    release_date = relationship("ReleaseDate", back_populates='scenes')
 
     rating_id = Column(Integer, ForeignKey('ratings.id'))
-    rating = relationship("Rating", back_populates='scenes')
 
     movie_id = Column(Integer, ForeignKey('movies.id'))
-    movie = relationship("Movie", back_populates='scenes')
 
-    tags = relationship("Tag", secondary=scene_tags_table, back_populates='scenes')
+    tags = relationship("Tag", secondary=scene_tags_table, backref='scenes', cascade_backrefs=False)
 
 class Performer(DeclarativeBase):
     """ c """
@@ -100,11 +96,11 @@ class Performer(DeclarativeBase):
 
     #repetative fields
     rating_id = Column(Integer, ForeignKey('ratings.id'))
-    rating = relationship("Rating", back_populates='performers')
+    #rating = relationship("Rating", back_populates='performers')
 
-    scenes = relationship("Scene", secondary=scene_cast_table, back_populates='performers')
+   # scenes = relationship("Scene", secondary=scene_cast_table, backref='performers', cascade_backrefs=False)
 
-    movies = relationship("Movie", secondary=movie_cast_table, back_populates='performers')
+   # movies = relationship("Movie", secondary=movie_cast_table, backref='performers', cascade_backrefs=False)
 
 class Director(DeclarativeBase):
     """ c """
@@ -113,9 +109,9 @@ class Director(DeclarativeBase):
     id = Column(Integer, primary_key=True)
     name = Column('name', String, unique=True)
 
-    scenes = relationship("Scene", back_populates='director')
+    scenes = relationship("Scene", backref='director', cascade_backrefs=False)
 
-    movies = relationship("Movie", back_populates='director')
+    movies = relationship("Movie", backref='director', cascade_backrefs=False)
 
 
 class ReleaseDate(DeclarativeBase):
@@ -125,9 +121,9 @@ class ReleaseDate(DeclarativeBase):
     id = Column(Integer, primary_key=True)
     release_date = Column('relesse_date', Date, unique=True)
 
-    scenes = relationship("Scene", back_populates='release_date')
+    scenes = relationship("Scene", backref='release_date', cascade_backrefs=False)
 
-    movies = relationship("Movie", back_populates='release_date')
+    movies = relationship("Movie", backref='release_date', cascade_backrefs=False)
 
 
 class Rating(DeclarativeBase):
@@ -135,13 +131,13 @@ class Rating(DeclarativeBase):
     __tablename__ = 'ratings'
 
     id = Column(Integer, primary_key=True)
-    rating = Column('rating', Float(precision=1), unique=True)
+    rating = Column('rating', Numeric, unique=True)
 
-    performers =relationship("Performer", back_populates='rating')
+    performers =relationship("Performer", backref = "rating", cascade_backrefs=False)
 
-    scenes = relationship("Scene", back_populates='rating')
+    scenes = relationship("Scene", backref='rating', cascade_backrefs=False)
 
-    movies = relationship("Movie", back_populates='rating')
+    movies = relationship("Movie", backref='rating', cascade_backrefs=False)
 
 
 class Movie(DeclarativeBase):
@@ -157,24 +153,20 @@ class Movie(DeclarativeBase):
     gallary_urls = Column("gallary_urls", ARRAY(String), nullable=True)
     #repetitive fields
     studio_id = Column(Integer, ForeignKey('studios.id'))
-    studio = relationship("Studio", back_populates='movies')
 
     director_id = Column(Integer, ForeignKey('directors.id'))
-    director = relationship("Director", back_populates='movies')
 
-    performers = relationship("Performer", secondary=movie_cast_table, back_populates='movies')
+    performers = relationship("Performer", secondary=movie_cast_table, backref='movies')
 
     release_date_id = Column(Integer, ForeignKey('releasedates.id'))
-    release_date = relationship("ReleaseDate", back_populates='movies')
 
     rating_id = Column(Integer, ForeignKey('ratings.id'))
-    rating = relationship("Rating", back_populates='movies')
     
-    scenes = relationship("Scene", back_populates='movie')
+    scenes = relationship("Scene", backref='movie', cascade_backrefs=False)
 
-    genres = relationship("Genre", secondary=movie_genres_table, back_populates='movies')
+    genres = relationship("Genre", secondary=movie_genres_table, backref='movies',  cascade_backrefs=False)
 
-    tags = relationship("Tag", secondary=movie_tags_table, back_populates='movies')
+    tags = relationship("Tag", secondary=movie_tags_table, backref='movies', cascade_backrefs=False)
 
 
 
@@ -190,9 +182,9 @@ class Studio(DeclarativeBase):
     despcription = Column('description', Text(), nullable=True)
     #repetative fields
 
-    movies = relationship("Movie", back_populates="studio")
+    movies = relationship("Movie", backref="studio", cascade_backrefs=False)
 
-    scenes = relationship("Scene", back_populates="studio")
+    scenes = relationship("Scene", backref="studio", cascade_backrefs=False)
 
 
 class Genre(DeclarativeBase):
@@ -202,7 +194,7 @@ class Genre(DeclarativeBase):
     id = Column(Integer, primary_key=True)
     genre_name = Column('genre_name', String)
 
-    movies = relationship("Movie", secondary=movie_genres_table, back_populates='genres')
+    #movies = relationship("Movie", secondary=movie_genres_table, back_populates='genres')
 
 
 
@@ -213,8 +205,8 @@ class Tag(DeclarativeBase):
     id = Column(Integer, primary_key=True)
     tag = Column('tag', String, unique=True)
 
-    scenes = relationship("Scene", secondary=scene_tags_table, back_populates='tags') # back_populates ref to tag defiend in scenes table and vice versa 
+    #scenes = relationship("Scene", secondary=scene_tags_table, back_populates='tags') # back_populates ref to tag defiend in scenes table and vice versa 
 
-    movies = relationship("Movie", secondary=movie_tags_table, back_populates='tags')
+    #movies = relationship("Movie", secondary=movie_tags_table, back_populates='tags')
 
 

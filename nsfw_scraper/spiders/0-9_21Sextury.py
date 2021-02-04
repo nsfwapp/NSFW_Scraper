@@ -22,6 +22,7 @@ class t21SexturySpider(Spider):
     name = "21sextury"
     allowed_domains = ["21sextury.com"]
     custom_settings = {
+        'ITEM_PIPELINES': {'nsfw_scraper.pipelines.ScenePipeline': 400},
         'HTTPCACHE_ENABLED' : True,
         'DOWNLOADER_MIDDLEWARES' :
             {
@@ -58,6 +59,7 @@ class t21SexturySpider(Spider):
             
 
             item = sceneItem()
+            item['parent_studio'] = '21 Sextury'
 
             item['title'] = response.selector.xpath("//a[@class='sceneLink  ']/@title").get()
             item['thumbnail_url'] = response.selector.xpath("//video[@class='vjs-tech']/@poster").get()
