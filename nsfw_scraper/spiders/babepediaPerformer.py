@@ -10,7 +10,7 @@ import time
 base_uri = "https://www.babepedia.com"
 
 class BabepediaPerformerSpider(Spider):
-    name = "sitePerformer"
+    name = "babepediaPerformer"
     allowed_domains = ["babepedia.com"]
     custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.PerformerPipeline': 400}}
     start_urls = [
@@ -59,13 +59,16 @@ class BabepediaPerformerSpider(Spider):
 
         item['profile_pic'] = [base_uri + response.xpath("//div[@id='profimg']/a/@href").get()]
 
-        date_list = response.xpath("//ul[@id='biolist']/li[2]/a/text()").getall()
-        d1s = date_list[0].split(' ')
-        d1s[0] = re.findall("\d+", d1s[0])[0]
-        d1s = ' '.join(i for i in d1s)
-        date_list[0] = d1s
-        full_date = ' '.join(i for i in date_list)
-        item['date_of_birth'] = datetime.strptime(full_date, '%d of %B %Y') # get age from here
+        try:
+            date_list = response.xpath("//ul[@id='biolist']/li[2]/a/text()").getall() #fix todo 
+            d1s = date_list[0].split(' ')
+            d1s[0] = re.findall("\d+", d1s[0])[0]
+            d1s = ' '.join(i for i in d1s)
+            date_list[0] = d1s
+            full_date = ' '.join(i for i in date_list)
+            item['date_of_birth'] = datetime.strptime(full_date, '%d of %B %Y') # get age from here
+        except IndexError:
+            print("bruh you need to fix this")
 
         if "Years active:" in atr:
             item['years_active'] = response.xpath("//ul[@id='biolist']/li[14]/text()").get()
@@ -107,7 +110,7 @@ class BabepediaPerformerSpider(Spider):
         else:
             item['piercings'] = ''
 
-        item['measurments'] = response.xpath("//ul[@id='biolist']/li[11]/text()").get().strip()
+        item['measurments'] = response.xpath("//ul[@id='biolist']/li[11]/text()").get().strip() # fix todo add if else for not in None
 
         item['rating'] = round(float(response.xpath("//div[@class='general rating']/b/text()").get().split('/')[0]), 1)
 

@@ -11,6 +11,7 @@ base_uri = "https://18vr.com/"
 class vr18Spider(Spider):
     name = "18vr"
     allowed_domains = ["18vr.com"]
+    custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.ScenePipeline': 400}}
     start_urls = [
         "https://18vr.com/vrpornvideos"
     ]
@@ -32,6 +33,7 @@ class vr18Spider(Spider):
     def parse_scene(self, response):
 
             item = sceneItem()
+            item['parent_studio'] = None
 
             gallary_list = []
 
@@ -45,7 +47,7 @@ class vr18Spider(Spider):
             item['length'] = datetime.strptime(response.xpath("//p[@class='video-duration']/@content").get(),"PT%MM%SS").time()
             item['description'] = response.xpath("//p[@class='video-description']/text()").get()
             item['gallary_urls'] = gallary_list
-            item['studio'] = response.xpath("//h2/a/strong/text()").get()
+            item['studio'] = '18vr'
             item['performers'] = response.xpath("//p[@class='video-actors']/a/text()").getall()
             item['director'] = ''
             item['release_date'] = datetime.strptime(response.xpath("//p[@class='video-upload-date']/text()").get().split(':')[1].strip(), '%B %d, %Y').date()

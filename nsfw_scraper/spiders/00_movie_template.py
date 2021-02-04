@@ -1,7 +1,7 @@
 from scrapy import Spider
 import re
 import json
-from ..items import sceneItem
+from ..items import movieItem
 import scrapy
 from datetime import datetime
 import time
@@ -9,7 +9,7 @@ import time
 base_uri = "https://www.adultdvdempire.com"
 
 class movieSpider(Spider):
-    name = "movieTemplate"
+    name = "yourspider"
     allowed_domains = ["adultdvdempire.com"]
     custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.MoviePipeline': 400}}
     start_urls = [
@@ -17,22 +17,20 @@ class movieSpider(Spider):
     ]
 
     def parse(self, response):
-        scenes = response.xpath("//div[@data-item='c-12 r-21']/a/@href").getall()
+        movies = response.xpath("//div[@class='boxcover-container']/a/@href").getall()
         
-        for scene_url in scenes:
+        for movie_url in movies:
             #print(base_uri + scene_url)
-            yield scrapy.Request(url=base_uri + scene_url, callback=self.parse_scene)
+            yield scrapy.Request(url=base_uri + movie_url, callback=self.parse_scene)
         #time.sleep(0.5)
-        last_page_url = response.xpath("//div[@data-item='c-51 r-11 t-c-31 / middle right']/a/@href").get()
-        page_num = re.findall("\d+", last_page_url)[0]
-
-        for page_num in range(1, int(page_num)+1):
-            yield scrapy.Request(url=f"https://letsdoeit.com/videos.en.html?page={page_num}", callback=self.parse)
+        next_page_url = response.xpath("//a[@title='Next']/@href").get()
+        if next_page_url is not None:
+            yield scrapy.Request(url=base_uri + next_page_url, callback=self.parse)
 
 
     def parse_scene(self, response):
 
-            item = sceneItem()
+            item = movieItem()
 
             item['movie_title'] = response.xpath("//h1/text()").get()
             item['movie_cover'] = response.xpath("//div[@itemprop='video']/meta[@itemprop='thumbnailUrl']/@content").get()
