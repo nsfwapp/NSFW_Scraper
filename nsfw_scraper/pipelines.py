@@ -12,10 +12,18 @@
 #    def process_item(self, item, spider):
 #        return item
 #from scrapy import signals
-import logging
-from sqlalchemy.orm import sessionmaker
-from nsfw_scraper.models import Scene, Rating, Tag, Studio, Movie, Genre, Director, ReleaseDate, Performer, db_connect, create_table
-from .items import sceneItem, performerItem, movieItem
+import logging, os
+from mongoengine import connect, disconnect
+from .models import Scene, Performer, Movie, Director, Studio, Rating, ReleaseDate, Tag, Genre
+from . import settings
+import urllib
+from dotenv import load_dotenv, find_dotenv
+from sqlalchemy.orm import session
+
+load_dotenv(find_dotenv())
+
+user = urllib.parse.quote_plus(os.getenv("USER"))
+passwd = urllib.parse.quote_plus(os.getenv("PASS"))
 
 
 class ScenePipeline(object):
@@ -23,14 +31,10 @@ class ScenePipeline(object):
     """Vixen pipeline for storing scraped items in the database"""
     
     def __init__(self):
-        engine = db_connect()
-        create_table(engine)
-        self.Session = sessionmaker(bind=engine, future=True)
-        
+        connect(os.getenv("MONGO_DATABASE"), host= "mongodb+srv://%s:%s@mongo@cluster0.lalaj.mongodb.net/%s?retryWrites=true&w=majority" % (user, passwd, os.getenv("MONGO_DATABASE")))
 
     def process_item(self, item, spider):
 
-        session = self.Session()
 
         scene = Scene(
                     title = item['title'],
@@ -115,14 +119,9 @@ class MoviePipeline(object):
     """Movie pipeline for storing scraped items in the database"""
     
     def __init__(self):
-        engine = db_connect()
-        create_table(engine)
-        self.Session = sessionmaker(bind=engine)
-        
+        connect(os.getenv("MONGO_DATABASE"), host= "mongodb+srv://%s:%s@mongo@cluster0.lalaj.mongodb.net/%s?retryWrites=true&w=majority" % (user, passwd, os.getenv("MONGO_DATABASE")))
 
     def process_item(self, item, spider):
-
-        session = self.Session()
 
         movie = Movie(
                     movie_title = item['movie_title'],
@@ -217,14 +216,12 @@ class PerformerPipeline(object):
     """Performer pipeline for storing scraped items in the database"""
     
     def __init__(self):
-        engine = db_connect()
-        create_table(engine)
-        self.Session = sessionmaker(bind=engine)
-        
+        connect(os.getenv("MONGO_DATABASE"), host= "mongodb+srv://%s:%s@mongo@cluster0.lalaj.mongodb.net/%s?retryWrites=true&w=majority" % (user, passwd, os.getenv("MONGO_DATABASE")))
+
 
     def process_item(self, item, spider):
 
-        session = self.Session()
+        
         performer = Performer(
                     name = item['name'],
                     aliases = item['aliases'],
@@ -246,14 +243,14 @@ class PerformerPipeline(object):
                     
         )
 
-        rating = session.query(Rating).filter_by(rating=item['rating']).first()
+        rating = Rating.objects(rating=item['rating'])
         
         if rating is not None:
             performer.rating = rating
         else:
             performer.rating = Rating(rating=item['rating'])
 
-        performer_exists = session.query(Performer).filter_by(name = item['name']).first() is not None
+        performer_exists = Performer.objects(name=item['name']) is not None
 
         if performer_exists:
             #logging.info(item['name'])
@@ -263,13 +260,11 @@ class PerformerPipeline(object):
             return item
         else:
             try:
-                session.add(performer)
-                session.commit()
+                performer.save()
                 logging.info(f'Item {performer} stored in db')
             except:
                 logging.info(f'Failed to add {performer} to db')
-                session.rollback()
                 raise
             finally:
-                session.close()
+                disconnect
         return item

@@ -81,14 +81,15 @@ ITEM_PIPELINES = {
     'nsfw_scraper.pipelines.MoviePipeline': 400,
 }
 # postgres
-DATABASE = {
-    'drivername': 'postgresql',
-    'host': 'localhost',
-    'port': os.getenv("PORT"),
-    'username': os.getenv("USER"),
-    'password': os.getenv("PASS"),
-    'database': os.getenv("DATABASE")
-}
+import urllib
+
+USER = urllib.parse.quote_plus(os.getenv("USER"))
+PASS = urllib.parse.quote_plus(os.getenv("PASS"))
+
+
+
+MONGO_URI = "mongodb+srv://" + urllib.parse.quote_plus(os.getenv("USER")) + ":" + urllib.parse.quote_plus(os.getenv("PASS")) + "@mongo@cluster0.lalaj.mongodb.net/" + os.getenv('MONGO_DATABASE') + "?retryWrites=true&w=majority"
+MONGO_DATABASE = os.getenv('MONGO_DATABASE')
 
 #MONGO_URI = os.getenv("MONGO_URI")
 ##MONGO_DATABASE = os.getenv("MONGO_DATABASE")
