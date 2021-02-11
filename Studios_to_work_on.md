@@ -4,7 +4,7 @@
 # Porn Networks
 
 
-- [ ] [AD4X](https://ad4x.com/tour/en/videos)
+- [ ] [AD4X](https://ad4x.com/tour/en/videos) [Not enough info on performers]
 - [ ] [Adult Time](https://adulttime.com)
 - [ ] [Analized.com](https://analized.com)
 - [ ] [Ameture Euro](https://amateureuro.com)
