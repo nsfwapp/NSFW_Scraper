@@ -9,27 +9,27 @@ import time
 
 base_uri = "https://www.babepedia.com"
 
-class BabepediaPerformerSpider(Spider):
-    name = "sitePerformer"
-    allowed_domains = ["babepedia.com"]
+class AD4XPerformerSpider(Spider):
+    name = "ad4xPerformer"
+    allowed_domains = ["ad4x.com"]
     custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.PerformerPipeline': 400}}
     start_urls = [
-        "https://www.babepedia.com/pornstartop100"
+        "https://ad4x.com/tour/en/models/all"
     ]
     
 
     def parse(self, response):
 
-        performers = response.xpath("//span[@class='thumbshot']/a/@href").getall()
+        performers = response.xpath("//div[@class='inner-wrap']/a/img/@src").getall()
 
         for performer_url in performers:
             #print(base_uri + scene_url)
-            yield scrapy.Request(url=base_uri + performer_url, callback=self.parse_performer)
+            yield scrapy.Request(url=performer_url, callback=self.parse_performer)
         #last_page_url = response.xpath("//li[@class='sowzbh-1 gjRQwQ'][7]/a/@href").get()
         #page_num = re.findall("\d+", last_page_url)[0]
 
-        for page_num in range(1,11):
-            yield scrapy.Request(url=f"https://www.babepedia.com/pornstartop100?page={page_num}", callback=self.parse)
+        for page_num in range(1,14):
+            yield scrapy.Request(url=f"https://ad4x.com/tour/en/models/all?page={page_num}", callback=self.parse)
 
         
 
@@ -40,7 +40,7 @@ class BabepediaPerformerSpider(Spider):
 
         item = performerItem()
 
-        item['name'] = response.xpath("//h1[@id='babename']/text()").get()
+        item['name'] = response.xpath("//h2[@class='mb-4 model-name']/font/font/text()").get()
 
         if response.xpath("//h2[@id='aka']/text()").get() is not None:
             item['aliases'] = response.xpath("//h2[@id='aka']/text()").get()

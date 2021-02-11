@@ -14,7 +14,7 @@ class BabepediaPerformerSpider(Spider):
     allowed_domains = ["babepedia.com"]
     custom_settings = {'ITEM_PIPELINES': {'nsfw_scraper.pipelines.PerformerPipeline': 400}}
     start_urls = [
-        "https://www.babepedia.com/pornstartop100"
+        "https://www.babepedia.com/pornstartop100?page=11"
     ]
     
 
@@ -28,7 +28,7 @@ class BabepediaPerformerSpider(Spider):
         #last_page_url = response.xpath("//li[@class='sowzbh-1 gjRQwQ'][7]/a/@href").get()
         #page_num = re.findall("\d+", last_page_url)[0]
 
-        for page_num in range(1,11):
+        for page_num in range(12,33):
             yield scrapy.Request(url=f"https://www.babepedia.com/pornstartop100?page={page_num}", callback=self.parse)
 
         
