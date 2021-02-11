@@ -1,5 +1,12 @@
 #### :heavy_dollar_sign: -> UI Inspiration
 
+#currently doing
+- [ ] babepedia performers all
+    - [x] topo 1000 added
+    - [ ] add another 2000
+- [ ] 18vr
+    - [x] female performers added
+    - [ ] add scenes
 
 # Porn Networks
 
