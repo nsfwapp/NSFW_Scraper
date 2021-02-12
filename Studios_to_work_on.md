@@ -4,9 +4,22 @@
 - [ ] babepedia performers all
     - [x] topo 1000 added
     - [ ] add another 2000
-- [ ] 18vr
+- [ ] 18vr ( badoink network )
     - [x] female performers added
     - [ ] add scenes
+- [ ] [18eightteen](https://www.18eighteen.com/xxx-teen-videos/)
+    - [ ] add performers
+    - [ ] add videos
+- [ ] [21 Naturals](https://www.21naturals.com/en/videos) [700+]
+    - [ ] add performers
+    - [ ] add videos
+- [ ] [21 Sextreme](https://www.21sextreme.com/en/videos) [4500+]
+    - [ ] add performers
+    - [ ] add videos
+- [ ] [21 Sextury](https://www.21sextury.com/en/videos) [10500+] [10+ series/sites]
+    - [ ] add performers
+    - [ ] add videos
+- [ ] [
 
 # Porn Networks
 
