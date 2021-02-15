@@ -203,7 +203,7 @@ class Tag(DeclarativeBase):
     __tablename__ = 'tags'
 
     id = Column(Integer, primary_key=True)
-    tag = Column('tag', String, unique=True)
+    tag_name = Column('tag', String, unique=True)
 
     #scenes = relationship("Scene", secondary=scene_tags_table, back_populates='tags') # back_populates ref to tag defiend in scenes table and vice versa 
 

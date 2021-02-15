@@ -16,12 +16,14 @@ class sceneItem(Item):
     description = Field()
     gallary_urls = Field()
     studio = Field()
+    parent_studio = Field()
     performers = Field() 
     director = Field()
     release_date = Field()
     rating = Field()
     movie = Field()
     tags = Field()
+    std_url=Field()
 
 class performerItem(Item):
 

@@ -55,28 +55,29 @@ class ScenePipeline(object):
                 scene.performers.append(Performer(name=performer))
 
         #director
-        for director in item['director']:
-            directort = session.query(Director).filter_by(name=director).first()
-            if directort is not None:
-                scene.director = director
-            else:
-                scene.performer = Director(name=director)
+        if item['director'] is not None:
+            for director in item['director']:
+                directort = session.query(Director).filter_by(name=director).first()
+                if directort is not None:
+                    scene.director = director
+                else:
+                    scene.performer = Director(name=director)
 
         #tag
-        for count,tag in enumerate(item['tags']):
+        for tag in item['tags']:
             #logging.info(tag, "theNewOne" , type([tag]))
-            tagt = session.query(Tag).filter_by(tag=tag).first()
+            tagt = session.query(Tag).filter_by(tag_name=tag).first()
             if tagt is not None:
                 scene.tags.append(tagt)
             else:
-                scene.tags.append(Tag(tag=tag))
+                scene.tags.append(Tag(tag_name=tag))
 
         #studio
         studio = session.query(Studio).filter_by(studio=item['studio']).first()
         if studio is not None:
             scene.studio = studio
         else:
-            scene.studio = Studio(studio=item['studio'], parent_studio=item['parent_studio'])
+            scene.studio = Studio(studio=item['studio'], parent_studio=item['parent_studio'], url=item['std_url'])
         
         #rating
         rating = session.query(Rating).filter_by(rating=item['rating']).first()

@@ -6,7 +6,7 @@ import scrapy
 from datetime import datetime
 import time
 
-base_uri = "https://18vr.com/"
+base_uri = "https://18vr.com"
 
 class vr18Spider(Spider):
     name = "18vr"
@@ -33,7 +33,8 @@ class vr18Spider(Spider):
     def parse_scene(self, response):
 
             item = sceneItem()
-            item['parent_studio'] = None
+            item['parent_studio'] = 'Badoink'
+            item['std_url'] = 'https://i2.wp.com/homido.com/wp-content/uploads/2018/02/18vr_logo_pink.png'
 
             gallary_list = []
 
@@ -42,17 +43,20 @@ class vr18Spider(Spider):
 
 
             item['title'] = response.xpath("//a/span[@itemprop='name']/text()").getall()[-1]
-            item['thumbnail_url'] = response.xpath("//source/@srcset").getall()[0].split(',')[-1].strip().split('?')[0]
-            item['preview_url'] = ''
-            item['length'] = datetime.strptime(response.xpath("//p[@class='video-duration']/@content").get(),"PT%MM%SS").time()
+            item['thumbnail_url'] = response.xpath("//source/@srcset").getall()[4].split(',')[-1].strip().split('?')[0]
+            item['preview_url'] = None
+            if "H" in response.xpath("//p[@class='video-duration']/@content").get():
+                item['length'] = datetime.strptime(response.xpath("//p[@class='video-duration']/@content").get(),"PT%MH%SS").time()
+            else:
+                item['length'] = datetime.strptime(response.xpath("//p[@class='video-duration']/@content").get(),"PT%MM%SS").time()
             item['description'] = response.xpath("//p[@class='video-description']/text()").get()
             item['gallary_urls'] = gallary_list
             item['studio'] = '18vr'
             item['performers'] = response.xpath("//p[@class='video-actors']/a/text()").getall()
-            item['director'] = ''
+            item['director'] = None
             item['release_date'] = datetime.strptime(response.xpath("//p[@class='video-upload-date']/text()").get().split(':')[1].strip(), '%B %d, %Y').date()
-            item['rating'] = ''
-            item['movie'] = ''
+            item['rating'] = None
+            item['movie'] = None
             item['tags'] = response.xpath("//p[@class='video-tags']/a/text()").getall()
 
 

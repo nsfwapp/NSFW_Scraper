@@ -45,7 +45,7 @@ class BabepediaPerformerSpider(Spider):
         if response.xpath("//h2[@id='aka']/text()").get() is not None:
             item['aliases'] = response.xpath("//h2[@id='aka']/text()").get()
         else:
-            item['aliases'] = ''
+            item['aliases'] = None
 
         item['gender'] = 'Female'
 
@@ -73,7 +73,7 @@ class BabepediaPerformerSpider(Spider):
         if "Years active:" in atr:
             item['years_active'] = response.xpath("//ul[@id='biolist']/li[14]/text()").get()
         else:
-            item['years_active'] = ''
+            item['years_active'] = None
 
         if response.xpath("//ul[@id='biolist']/li[4]/a/text()").get() is not None:
             item['ethnicity'] = response.xpath("//ul[@id='biolist']/li[4]/a/text()").get()
@@ -101,16 +101,19 @@ class BabepediaPerformerSpider(Spider):
         if "Tattoos:" in atr:
             item['tattoos'] = response.xpath("//ul[@id='biolist']/li[15]/text()").get()
         else:
-            item['tattoos'] = ''
+            item['tattoos'] = None
 
         if "Piercings:" in atr and "Tattoos:" in atr:
             item['piercings'] = response.xpath("//ul[@id='biolist']/li[16]/text()").get()
         elif "Piercings:" in atr and "Tattoos:" not in atr:
             item['piercings'] = response.xpath("//ul[@id='biolist']/li[15]/text()").get()
         else:
-            item['piercings'] = ''
+            item['piercings'] = None
 
-        item['measurments'] = response.xpath("//ul[@id='biolist']/li[11]/text()").get().strip() # fix todo add if else for not in None
+        if "Measurements:" in atr:
+            item['measurments'] = response.xpath("//ul[@id='biolist']/li[11]/text()").get().strip() # fix todo add if else for not in None
+        else:
+            item['measurments'] = None
 
         item['rating'] = round(float(response.xpath("//div[@class='general rating']/b/text()").get().split('/')[0]), 1)
 
