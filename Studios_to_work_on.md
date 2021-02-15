@@ -1,13 +1,12 @@
 #### :heavy_dollar_sign: -> UI Inspiration
 
 #currently doing
-- [ ] babepedia performers all
+- [x] babepedia performers all
     - [x] topo 1000 added
-    - [ ] add another 2000
+    - [x] add another 2000
 #
-- [ ] 18vr ( badoink network )
-    - [x] female performers added
-    - [ ] add scenes
+- [x] 18vr ( badoink network ) :heavy_check_mark:
+
 - [ ] [18 Yoga](https://18yoga.com/videos)
 - [ ] [18eighteen](https://www.18eighteen.com/xxx-teen-videos/)
 - [ ] [21 Naturals](https://www.21naturals.com/en/videos) [700+]
