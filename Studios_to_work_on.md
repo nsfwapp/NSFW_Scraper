@@ -16,18 +16,15 @@
 - [ ] [5k Porn](https://www.5kporn.com/) [100+]
 #
 - [ ] [AD4X](https://ad4x.com/tour/en/videos) [Not enough info on performers]
-- [ ] [Adult Time](https://adulttime.com)
-    - [ ] check sister sites
+- [ ] [Adult Time orignals](https://www.adultdvdempire.com/95569/studio/adult-time-porn-videos.html?media=14)
+    - [ ] [Altporn4u](https://www.altporn4u.com/films/)
 - [ ] [Ameteur Euro](https://amateureuro.com)
 - [ ] [Abbay Winters](https://www.abbywinters.com/amateurs/shoots/girls_and_their_boys) [100+]
 - [ ] [Adam & Eve TV](https://www.adamandevetv.com/) [600+ scenes] [100+ movies]
 - [ ] [alex legend](https://www.alexlegend.com/sd3.php?show=recent_video_updates)
-    - [ ] check sister sites
 - [ ] [All Fine Girls](https://www.allfinegirls.com/)
-- [ ] [Allanal.com](https://tour.allanal.com/videos) [100+] [5 sites]
-    - [ ] check sister sites
-- [ ] [Analized.com](https://analized.com)
-    - [ ] check sister sites
+- [ ] [Allanal.com](https://tour.allanal.com/videos) [100+]
+- [ ] [Analized.com](https://analized.com/1/scenes/recent/1/)
 - [ ] [Assylum](https://www.assylum.com/?home)
 - [ ] [Ameture Euro](https://amateureuro.com)
 - [ ] [All Her Luv](https://allherluv.com/)
@@ -57,6 +54,7 @@
 - [ ] [BabeVR](https://www.babevr.com/)
 - [ ] [BBC Pie](https://bbcpie.com)
 - [ ] [Bretty Sis](https://brattysis.com/video/gallery/)
+- [ ] [Bare Maidens](https://www.baremaidens.com/videos)
 #
 - [ ] [castingCouchhd](https://castingcouch-hd.com/)
 - [ ] [Club Sweethearts](https://clubseventeen.com/#)
@@ -64,6 +62,7 @@
 - [ ] [Czech AV](https://czechav.com/) :heavy_dollar_sign:
 - [ ] [Cum 4k](https://cum4k.com)
 - [ ] [Couple Cinema](https://www.couplescinema.com/search/videos) [450+ movies]
+- [ ] [Critical Mass Video](https://www.adultdvdempire.com/93328/studio/critical-mass-video-porn-videos.html)
 #
 - [ ] [Dark Room VR](https://darkroomvr.com/video)
 - [ ] [Daughter Swap](https://www.daughterswap.com/)
@@ -84,6 +83,8 @@
 - [ ] [Elegenxia](http://www.eleganxia.com/sites.html)
 - [ ] [Exotic 4k](https://exotic4k.com/)
 - [ ] [Erito](https://www.erito.com/scenes)
+- [ ] [Else Cinema](https://elsecinema.com/movies)
+
 #
 - [ ] [Fetish Network](http://www.fetishnetwork.com/)
 - [ ] [Fantasy Massage](https://www.fantasymassage.com/en/videos)
@@ -94,15 +95,19 @@
 - [ ] [Fitting Room](https://www.fitting-room.com/videos/)
 - [ ] [FTV Girls](https://www.ftvgirls.com/models.html)
 - [ ] [Fantasy HD](https://fantasyhd.com/)
+- [ ] [Fine Erotica](https://www.fine-erotica.com/)
+- [ ] [Fit 18](https://fit18.com/)
 #
 - [ ] [Girlsrimming](https://www.girlsrimming.com/tour/categories/movies/1/latest/)
 - [ ] [Girl Cum](https://girlcum.com/)
+- [ ] [Girlsway](https://www.girlsway.com/en/videos)
 #
 - [ ] [HD Massage Porn](https://hdmassageporn.com/videos/) [150+]
 - [ ] [Her HD](https://www.herhd.com/videos?page=4) [40]
 - [ ] [Hustler](https://www.hustler.com/movies)
 - [ ] [Holed](https://holed.com/)
 - [ ] [Hentai Pros Network](https://www.hentaiprosnetwork.com/scenes)
+- [ ] [Hot Guys Fuck](https://www.hotguysfuck.com/videos)
 
 #
 - [ ] [Is this Real?](https://www.isthisreal.com/en/videos)
@@ -111,6 +116,9 @@
 - [ ] [Jules Jordan](https://www.julesjordan.com/trial/categories/movies.html)
 - [ ] [Joymii](https://www.joymii.com/site/videos)
 - [ ] [James deen](https://jamesdeen.com/)
+- [ ] [Jerk off with me](https://jerkoffwithme.com/videos)
+- [ ] [Jav hub](https://tour.javhub.com/scenes)
+- [ ] [Jay Rock films](https://www.adultdvdempire.com/94769/studio/jayrock-productions-porn-movies.html)
 #
 - [ ] [Kinky Mistress](https://www.kinkymistresses.com/updates.aspx)
 - [ ] [Kink](https://www.kink.com/shoots/latest)
@@ -122,6 +130,8 @@
 - [ ] [Look at her now](https://www.lookathernow.com/scenes)
 - [ ] [Lustery](https://lustery.com/)
 - [ ] [LetsDoeIt](https://letsdoeit.com/)
+- [ ] [Lust Cinema](https://lustcinema.com/)
+- [ ] [Light Southern Cinema](https://www.lightsouthern.com/cinema/)
 #
 - [ ] [Magma Film Network](https://www.magmafilm.com/)
 - [ ] [Mile High Media](https://www.milehighmedia.com/scenes)
@@ -136,6 +146,7 @@
 - [ ] [My Milfz](https://www.mymilfz.com/)
 - [ ] [My Pervy Family](https://www.mypervyfamily.com/tour)
 - [ ] [Mamacitaz](https://mamacitaz.com)
+- [ ] [MixedX](https://mixedx.com/categories/movies/1/latest/)
 #
 - [ ] [Nympho](https://tour.nympho.com/videos)
 - [ ] [Naughty America](https://www.naughtyamerica.com/new-porn-videos)
@@ -162,9 +173,13 @@
 - [ ] [Perv city](https://pervcity.com/categories/movies.html)
 - [ ] [POVD](https://povd.com/)
 - [ ] [Playboy TV](https://www.playboytv.com/shows)
+- [ ] [Pure Taboo](https://www.puretaboo.com/en/videos)
+- [ ] [Pinkoclub](https://www.pinkoclub.com/new-video.php)
 #
 - [ ] [Reality Kings](https://www.realitykings.com/scenes)
 - [ ] [Real VR](https://realvr.com/)
+- [ ] [Rocco Seffredi](https://www.roccosiffredi.com/en/dvds)
+- [ ] [Real Sensual](https://realsensual.com/categories/Movies.html)
 
 #
 - [ ] [Spizoo](https://www.spizoo.com/categories/Movies.html)
@@ -176,11 +191,11 @@
 - [ ] [Swallowed](https://tour.swallowed.com/)
 - [ ] [Sapphix](https://www.sapphix.com/) [2300+]
 - [ ] [Squirted](https://www.squirted.com/scenes)
-#    
-- [ ] [Vip 4k Network](https://vip4k.com/en/videos) [150+] (12 sites)
-#
+- [ ] [Sloppy toppy](https://www.manyvids.com/Profile/1002638751/Sloppy-Toppy/Store/Videos/)
 - [ ] [Submissed](https://submissed.com/) [7 sites]
 - [ ] [SpyFam](https://spyfam.com)
+- [ ] [Sinematica](https://www.sinematica.com/search/videos)
+- [ ] [Scarlett Revell](https://scarlettrevell.com/film-categories/)
 
 #
 - [ ] [Teen Mega World](https://teenmegaworld.net/categories/movies.html)
@@ -195,8 +210,12 @@
 - [ ] [Teen Playground](teenyplayground.com)
 - [ ] [True Anal](https://tour.trueanal.com/)
 - [ ] [Tiny 4k](https://tiny4k.com/)
+- [ ] [Taboo Heat](https://www.adultdvdempire.com/95214/studio/taboo-heat-porn-videos.html)
+- [ ] [Thogson](https://www.adultdvdempire.com/95964/studio/thagson-porn-videos.html)
+- [ ] [The jerk off games](https://www.thejerkoffmembers.com/categories/movies.html)
 #
 - [ ] [Ultra Films](https://www.ultrafilms.com/)
+- [ ] [UpCloseX](https://www.adultdvdempire.com/95816/studio/upclosex-porn-movies.html)
 #
 - [ ] [Vixen Network](https://vixengroup.com/brands)
 - [ ] [Virtual Taboo VR](https://virtualtaboo.com/videos)
@@ -207,6 +226,8 @@
 - [ ] [VrHush](https://vrhush.com/)
 - [ ] [VrTeen](https://www.vrteenrs.com/vrporn.php)
 - [ ] [VIP Sex Vault](https://vipsexvault.com)
+- [ ] [Vip 4k Network](https://vip4k.com/en/videos) [150+] (12 sites)
+- [ ] [Vivid](https://www.adultdvdempire.com/11/studio/vivid-porn-movies.html?sort=year&media=2)
 - [ ] [vitalyuncensored]
 
 #
@@ -214,10 +235,12 @@
 - [ ] [watchgirlsnude](https://www.watch4beauty.com/)
 - [ ] [WhorecraftVR](https://whorecraftvr.com/)
 - [ ] [Wet VR](https://wetvr.com/)
+- [ ] [Wolf Wanger](https://www.wolfwagner.com/)
 #
 - [ ] [X Art](https://www.x-art.com/videos/)
 - [ ] [XEmpire](https://www.xempire.com/en/videos)
 - [ ] [X Sensual](http://x-sensual.com/index.php/main/show_sets2/3)
+- [ ] [xConfessions](https://xconfessions.com/)
 #
 - [ ] [You Mix Porn](https://youmixporn.com/)
 
@@ -247,3 +270,6 @@
 - Only Movies
   - [ ] [Critical Mass Video](https://www.adultdvdempire.com/93328/studio/critical-mass-video-porn-videos.html)
   - [ ] [Cinema Erotika](https://www.adultdvdempire.com/93890/studio/cinema-erotika-porn-videos.html)
+  
+  
+  - [ ] [store](https://store.erikalust.com/)
